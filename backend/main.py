@@ -1,6 +1,9 @@
-# FastAPI app principal
-# - Configuração do FastAPI
-# - Middleware CORS liberado
-# - Endpoint de teste /api/test
-# - Criação das tabelas do banco
-# - Importação dos modelos e database
+from fastapi import FastAPI
+from database import get_connection
+
+app = FastAPI()
+
+@app.get("/api/despesas")
+def listar_despesas():
+
+    return despesas
