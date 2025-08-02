@@ -26,13 +26,33 @@ except:
 def formatar_valor(valor):
     return f"R$ {valor:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
 
+# Produção ============================================================
 def carregar_dados_liquidacoes():
     caminho_arquivo = "backend/Liquidações pagas (1).csv"
     df = processar_liquidacoes_pagas(caminho_arquivo, silencioso=True)
     return df
+# Produção ============================================================
+
+# Desenvolvimento =====================================================
+#def carregar_dados_liquidacoes():
+#    caminho_arquivo = "Liquidações pagas (1).csv"
+#    df = processar_liquidacoes_pagas(caminho_arquivo, silencioso=True)
+#    return df
+# Desenvolvimento =====================================================
 
 # Título principal
 st.title("🏛️ Fiscal de Maringá")
+st.markdown(
+    """
+    <br>
+    <b>Bem-vindo ao Fiscal de Maringá!</b>  
+    Este projeto tem como objetivo facilitar a análise dos dados públicos emitidos pela Prefeitura de Maringá.  
+    Aqui você pode visualizar estatísticas, gráficos e explorar os principais fornecedores e gastos do município de forma transparente e interativa.  
+    <br>
+    <i>Projeto sem fins lucrativos, feito para promover a transparência e o controle social.</i>
+    """,
+    unsafe_allow_html=True
+)
 
 abas = st.tabs([
     "📊 Liquidações",
