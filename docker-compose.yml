@@ -1,6 +1,0 @@
-# Docker Compose para orquestração dos serviços
-# - Backend: FastAPI na porta 8000
-# - Frontend: Vue/Nginx na porta 5173
-# - Database: PostgreSQL na porta 5432 (opcional, pode usar nuvem)
-# - Volumes para persistência de dados
-# - Networks para comunicação entre containers
