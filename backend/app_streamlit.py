@@ -42,17 +42,27 @@ def carregar_dados_liquidacoes():
 
 # Título principal
 st.title("🏛️ Fiscal de Maringá")
+st.markdown("")
 st.markdown(
     """
-    <br>
-    <b>Bem-vindo ao Fiscal de Maringá!</b>  
-    Este projeto tem como objetivo facilitar a análise dos dados públicos emitidos pela Prefeitura de Maringá.  
-    Aqui você pode visualizar estatísticas, gráficos e explorar os principais fornecedores e gastos do município de forma transparente e interativa.  
-    <br>
-    <i>Projeto sem fins lucrativos, feito para promover a transparência e o controle social.</i>
+    <div style="text-align:center;">
+        <span style="font-size:1.3em;"><b>Bem-vindo ao <span style="color:#1976d2;">Fiscal de Maringá</span>!</b></span><br>
+        <span style="font-size:1.1em;">🔎 Transparência e controle dos gastos públicos de Maringá</span>
+    </div>
     """,
     unsafe_allow_html=True
 )
+st.markdown(
+    """
+    <div style="text-align:center; margin-top:10px;">
+        Este projeto facilita a análise dos dados públicos emitidos pela Prefeitura.<br>
+        Visualize estatísticas, gráficos e explore os principais fornecedores e gastos do município.<br>
+        <span style="color:gray; font-size:0.95em;"><i>Projeto sem fins lucrativos, feito para promover a transparência e o controle social.</i></span>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown("")
 
 abas = st.tabs([
     "📊 Liquidações",
