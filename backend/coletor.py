@@ -3,12 +3,13 @@ import numpy as np
 from datetime import datetime
 import re
 
-def processar_liquidacoes_pagas(caminho_arquivo):
+def processar_liquidacoes_pagas(caminho_arquivo, silencioso=False):
     try:
         df = pd.read_csv(caminho_arquivo, sep=';', skiprows=3, encoding='latin-1')
         
-        print("🔍 Colunas encontradas no arquivo:")
-        print(df.columns.tolist())
+        if not silencioso:
+            print("🔍 Colunas encontradas no arquivo:")
+            print(df.columns.tolist())
         
         df = df.dropna(subset=['Fornecedor', 'Valor'])
         
@@ -46,15 +47,17 @@ def processar_liquidacoes_pagas(caminho_arquivo):
         total_gasto = df_limpo['valor'].sum()
         total_registros = len(df_limpo)
         
-        print(f"✅ Arquivo processado com sucesso!")
-        print(f"📊 Total de registros: {total_registros}")
-        print(f"💰 Total gasto: R$ {total_gasto:,.2f}")
-        print(f"📅 Período: {df_limpo['data'].min().strftime('%d/%m/%Y')} a {df_limpo['data'].max().strftime('%d/%m/%Y')}")
+        if not silencioso:
+            print(f"✅ Arquivo processado com sucesso!")
+            print(f"📊 Total de registros: {total_registros}")
+            print(f"💰 Total gasto: R$ {total_gasto:,.2f}")
+            print(f"📅 Período: {df_limpo['data'].min().strftime('%d/%m/%Y')} a {df_limpo['data'].max().strftime('%d/%m/%Y')}")
         
         return df_limpo
         
     except Exception as e:
-        print(f"❌ Erro ao processar arquivo: {e}")
+        if not silencioso:
+            print(f"❌ Erro ao processar arquivo: {e}")
         return None
 
 def limpar_nome_fornecedor(fornecedor):
