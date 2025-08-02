@@ -27,7 +27,7 @@ def formatar_valor(valor):
     return f"R$ {valor:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
 
 def carregar_dados_liquidacoes():
-    caminho_arquivo = r"c:\Users\joaop\Downloads\Liquidações pagas (1).csv"
+    caminho_arquivo = "Liquidações pagas (1).csv"
     df = processar_liquidacoes_pagas(caminho_arquivo, silencioso=True)
     return df
 
