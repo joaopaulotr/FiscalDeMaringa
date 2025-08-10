@@ -138,12 +138,12 @@ with abas[0]:
 #===============================================================================================================
 with abas[1]:
     st.header("🏢 Análise de Fornecedores")
-    st.info("Adicione aqui a análise de fornecedores e carregamento de dados específicos.")
+    st.info("Em produção.")
     # Exemplo: st.dataframe(df_fornecedores)
 
 with abas[2]:
     st.header("📁 Outros Dados")
-    st.info("Adicione aqui outras análises e dados legais.")
+    st.info("Em produção.")
     # Exemplo: st.dataframe(df_outros)
 #===============================================================================================================
 st.markdown("---")
